@@ -1,5 +1,5 @@
 {
-  "name": "react-native-android-activity",
+  "name": "@pawan-pk/react-native-android-activity",
   "version": "0.1.0",
   "description": "Simple package to handle android activities.",
   "main": "./lib/module/index.js",
@@ -30,7 +30,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-android-activity-example",
+    "example": "yarn workspace @pawan-pk/react-native-android-activity-example",
     "clean": "del-cli android/build example/android/build example/android/app/build",
     "prepare": "bob build",
     "typecheck": "tsc",
