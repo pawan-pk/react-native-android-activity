@@ -4,23 +4,23 @@ Simple package to handle android activities.
 
 ## Installation
 
-
 ```sh
-npm install react-native-android-activity
+npm install @pawan-pk/react-native-android-activity
 ```
-
 
 ## Usage
 
-
 ```js
-import { multiply } from 'react-native-android-activity';
+import { startActivity } from '@pawan-pk/react-native-android-activity';
 
 // ...
 
-const result = multiply(3, 7);
+startActivity(
+  1,
+  'androidactivity.example.SecondActivity',
+  'androidactivity.example' // Optional package name for same app activity
+);
 ```
-
 
 ## Contributing
 

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "react-native-android-activity": ["./src/index"]
+      "@pawan-pk/react-native-android-activity": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
