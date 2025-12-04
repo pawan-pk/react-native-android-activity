@@ -1,5 +1,8 @@
 import { View, StyleSheet, Button } from 'react-native';
-import { finishActivity, startActivity } from 'react-native-android-activity';
+import {
+  finishActivity,
+  startActivity,
+} from '@pawan-pk/react-native-android-activity';
 
 export default function App() {
   const startActivityHandler = () => {

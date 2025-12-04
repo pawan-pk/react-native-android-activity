@@ -30,7 +30,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace @pawan-pk/react-native-android-activity-example",
+    "example": "yarn workspace @pawan-pk/react-native-android-activity-example android",
     "clean": "del-cli android/build example/android/build example/android/app/build",
     "prepare": "bob build",
     "typecheck": "tsc",
