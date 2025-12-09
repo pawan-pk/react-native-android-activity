@@ -16,7 +16,6 @@ import { startActivity } from '@pawan-pk/react-native-android-activity';
 // ...
 
 startActivity(
-  1,
   'androidactivity.example.SecondActivity',
   'androidactivity.example' // Optional package name for same app activity
 );
