@@ -17,19 +17,18 @@ class AndroidActivityModule(reactContext: ReactApplicationContext) :
   }
 
   override fun startActivity(
-    requestCode: Double,
     className: String?,
     packageName: String?,
     promise: Promise?
   ) {
     if (className == null) {
-      promise?.reject("E_CLASS_NAME_MISSING", "ClassName is required.")
+      promise?.reject("CLASS_NAME_MISSING", "ClassName is required.")
       return
     }
 
     val currentActivity = reactApplicationContext.getCurrentActivity()
     if (currentActivity == null) {
-      promise?.reject("E_NO_CURRENT_ACTIVITY", "Current activity is not available.")
+      promise?.reject("NO_CURRENT_ACTIVITY", "Current activity is not available.")
       return
     }
 
@@ -41,16 +40,16 @@ class AndroidActivityModule(reactContext: ReactApplicationContext) :
       }
       val intent = Intent()
       intent.component = componentName
-      currentActivity.startActivityForResult(intent, requestCode.toInt())
+      currentActivity.startActivity(intent)
       promise?.resolve(true)
     } catch (e: Exception) {
-      promise?.reject("E_START_ACTIVITY_FAILED", "Failed to start activity: ${e.message}", e)
+      promise?.reject("START_ACTIVITY_FAILED", "Failed to start activity: ${e.message}", e)
     }
   }
 
-  override fun finishActivity(requestCode: Double) {
+  override fun finishCurrentActivity() {
     val currentActivity = reactApplicationContext.getCurrentActivity()
-    currentActivity?.finishActivity(requestCode.toInt())
+    currentActivity?.finish()
   }
 
   companion object {

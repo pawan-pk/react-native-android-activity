@@ -1,11 +1,10 @@
 import { View, StyleSheet, Button } from 'react-native';
-import { finishActivity, startActivity } from '../../src/index';
+import { startActivity } from '../../src/index';
 
 export default function App() {
   const startActivityHandler = () => {
     // Example usage: Start an activity with requestCode 1, className 'com.example.MyActivity', packageName 'com.example'
     startActivity(
-      1,
       'androidactivity.example.SecondActivity',
       'androidactivity.example' // Optional package name for same app activity
     )
@@ -17,14 +16,9 @@ export default function App() {
       });
   };
 
-  const finishActivityHandler = () => {
-    finishActivity(1);
-  };
-
   return (
     <View style={styles.container}>
       <Button onPress={startActivityHandler} title="Start Activity" />
-      <Button onPress={finishActivityHandler} title="Finish Activity" />
     </View>
   );
 }
